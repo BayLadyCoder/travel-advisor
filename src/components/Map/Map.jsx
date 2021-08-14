@@ -13,14 +13,14 @@ const Map = () => {
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDuBJEisXWU_IBBQIdgjiOvY80RwMiiH6A" }}
+        bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_KEY }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={""}
-        onChange={""}
-        onChildClick={""}
+        onChange={() => console.log("onChange")}
+        onChildClick={() => console.log("onChildClick")}
       ></GoogleMapReact>
     </div>
   );
