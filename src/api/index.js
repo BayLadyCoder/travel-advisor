@@ -11,8 +11,8 @@ const options = {
     tr_longitude: "109.149359",
   },
   headers: {
-    "x-rapidapi-key": process.env.RAPID_API_KEY,
-    "x-rapidapi-host": process.env.RAPID_API_HOST,
+    "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
+    "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
   },
 };
 
