@@ -11,12 +11,20 @@ function App() {
   const [bounds, setBounds] = useState(null);
 
   useEffect(() => {
-    getPlacesData().then((data) => {
-      setPlaces(data);
-    });
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
+    );
   }, []);
 
-  console.log(places);
+  useEffect(() => {
+    getPlacesData(bounds?.sw, bounds?.ne).then((data) => {
+      setPlaces(data);
+    });
+  }, [coordinates, bounds]);
+
+  console.log("places", places);
   return (
     <>
       <CssBaseline />
