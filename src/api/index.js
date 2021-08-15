@@ -1,10 +1,6 @@
 import axios from "axios";
 
 export const getPlacesData = async (sw, ne) => {
-  if (!sw || !ne) {
-    return;
-  }
-
   try {
     const URL =
       "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
